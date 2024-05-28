@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Lautaro PortFolio</title>
+    <link rel="shortcut icon" href="assets/others/iconhead.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/mediaquery.css">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap'); </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to Lautaro's PortFolio!</h1>
+    </header>
+
+    <nav id="navbar">
+        <a href="#description-section" class="href-navbar"><img src="assets/others/navbar-description.png"
+                alt="description-img" class="navbarimg"><b>About Me</b></a>
+        <a href="#theseare-myworks-h3" class="href-navbar"><img src="assets/others/works-navbar.png" alt="works-img"
+                class="navbarimg"><b>My Works</b></a>
+        <a href="#section-contact-media" class="href-navbar"><img src="assets/others/contact-navbar.png" alt="contact-navbar"
+                class="navbarimg"><b>Contact Me!</b></a>
+    </nav>
+
+    <section id="presentation">
+        <article id="desc-presentation">
+            <h2>Lautaro Guastavino Suarez</h2>
+            <p>Web Developer</p>
+        </article>
+        <picture id="img-presentation">
+            <img src="assets/imgs/Profile-img.jpg" alt="profileimg" id="principal-profile">
+        </picture>
+    </section>
+
+    <section id="description-section">
+        <h2 class="titles-aboutskills">About Me</h2>
+        <p>
+            Hey!. My name is Lautaro. I'm 19 Years Old. I'm a kindness and friendly person. I've studied in NUCBA
+            Institute. Prepared for TeamWork and Proactive Communication. I consider I have a strong ability to adapt to
+            different environments and work together with people from diverse backgrounds.
+        </p>
+
+        <h2 class="titles-aboutskills">My Skills</h2>
+        <ul id="list-of-my-skills">
+            <li><img src="assets/others/skills-html.png" alt="html" class="imgskills">HTML</li>
+            <li><img src="assets/others/skills-css.png" alt="css" class="imgskills">CSS</li>
+            <li><img src="assets/others/responsive-skills.png" alt="responsive" class="imgskills">RESPONSIVE</li>
+            <li><img src="assets/others/github-skills.png" alt="github" class="imgskills">GIT/GITHUB</li>
+            <li><img src="assets/others/javascript-skills.png" alt="javascript" class="imgskills">JAVASCRIPT</li>
+            <li><img src="assets/others/React-skills.png" alt="reactjs" class="imgskills">REACT JS</li>
+            <li><img src="assets/others/nodejs-skills.png" alt="nodejs" class="imgskills">NODE JS</li>
+            <li><img src="assets/others/mongodb-skills.svg" alt="mongodb" class="imgskills">MONGODB</li>
+            <li><img src="assets/others/sql-skills.png" alt="sql" class="imgskills">SQL</li>
+        </ul>
+    </section>
+
+    <section id="myworks-section">
+        <h3 id="theseare-myworks-h3">These are my actual projects</h3>
+        <nav id="myprojects">
+            <a href="https://e2-web-design-nucba.vercel.app/" class="href-gotopage" rel="noreferrer" target="_blank">
+                <img src="assets/imgs/hitmanpage-works.png" alt="hitmanpage" class="works-vercel"></img>
+            </a>
+            <a href="https://nucba-snk-4717.vercel.app/" class="href-gotopage" rel="noreferrer" target="_blank">
+                <img src="assets/imgs/profile-works.png" alt="profilepage" class="works-vercel"></img>
+            </a>
+            <a href="https://first-trial-web-shop.vercel.app/" class="href-gotopage" rel="noreferrer" target="_blank">
+                <img src="assets/imgs/webshop-works.png" alt="" class="works-vercel"></img>
+            </a>
+        </nav>
+    </section>
+
+    <section id="section-contact-media">
+        <h2 class="titles-contactmedia">My SocialMedia</h2>
+        <ul id="ul-socialmedialist">
+            <li class="socialmedialist"><a href="https://github.com/OsniaaK" class="href-socialmedia" rel="noreferrer" target="_blank"><img
+                        src="assets/others/github-socialmedia.png" alt="Github" class="imgsocialmedialist">GitHub</a>
+            </li>
+            <li class="socialmedialist"><a href="" class="href-socialmedia" rel="noreferrer" target="_blank"><img
+                        src="assets/others/whatsapp-socialmedia.png" alt="Whatsapp"
+                        class="imgsocialmedialist">Whatsapp</a></li>
+            <li class="socialmedialist"><a href="https://www.instagram.com/laugsuarezz/" class="href-socialmedia" rel="noreferrer" target="_blank"><img
+                        src="assets/others/instagram-socialmedia.png" alt="Instagram"
+                        class="imgsocialmedialist">Instagram</a></li>
+        </ul>
+    </section>
+
+    <h2 class="titles-contactmedia">Contact Me</h2>
+    <form action="" id="form-email">
+
+        <input type="email" placeholder="Your Email" id="input-email-contact" required>
+        <textarea name="textarea-contact" id="textarea" placeholder="Write your Message" required></textarea>
+
+        <fieldset id="buttons-style">
+            <button type="submit" class="button-form">Sumbit</button>
+            <button type="reset" class="button-form">Reset</button>
+        </fieldset>
+
+    </form>
+</body>
+
+</html>
