@@ -217,6 +217,7 @@ main > nav > a:hover span {
     display: flex;
     margin-left: 15px;
     margin-top: 20px;
+    padding-top: 10%;
     padding-bottom: 90px;
     justify-content: space-around;
     cursor: default;
@@ -295,16 +296,16 @@ main > nav > a:hover span {
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    padding-top: 5%;
 }
 
 #myworks-section > h2 {
     display: flex;
-    margin-top: -5px;
     justify-content: center;
     align-items: center;
     font-size: 3.25rem;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     text-transform: uppercase;
 }
 
@@ -379,11 +380,11 @@ main > nav > a:hover span {
     align-items: center;
     width: 100%;
     height: 100vh;
+    padding-top: 5%;
 }
 
 #contactme > h2 {
     display: flex;
-    margin-top: -80px;
     margin-bottom: 30px;
     font-size: 3.25rem;
     align-items: center;
