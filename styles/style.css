@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,333 +8,462 @@
     list-style: none;
 }
 
+:root {
+    --background: rgb(1, 1, 43);
+    --colorsections: #00272B;
+    --details: #c73030;
+    --color: rgba(114, 114, 114, 0.3);
+
+    --background-light: #ff5555; /* Red */
+    --background-dark: #000000; /* Black */
+    --text-color-light: #ffffff;
+    --text-color-dark: #ffffff;
+    --bubble-size: 12px;
+    --glow-color: rgba(255, 255, 255, 0.5);
+}
+
+::selection {
+    background-color: rgb(135, 5, 187);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(5vh + 2rem);
+    scroll-snap-align: start;
+}
+
 body {
-    background-color: rgb(36, 36, 36);
+    width: 100%;
+    height: 100%;
     color: snow;
     font-family: "Outfit";
+    background-color: #111111;
+  background-image: linear-gradient(
+    32deg,
+    rgba(8, 8, 8, 0.74) 30px,
+    transparent
+  );
+  background-size: 60px 60px;
+  background-position: -5px -5px;
 }
 
-header {
-    display: flex;
-    position: fixed;
+main {
     width: 100%;
-    justify-content: center;
-    font-size: .55rem;
-    background-color: rgb(220, 20, 60);
-    text-shadow: black 1px 1px 3px;
-    cursor: default;
-}
-
-#navbar {
-    position: fixed;
-    background-color: rgba(220, 20, 60, 0.75);
-    border-radius: 5px;
-    margin-left: 10px;
-    width: 65px;
-    transition: 0.2s;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 4rem;
+    cursor: default;
+    font-family: "Bebas Neue";
+    word-spacing: 20px;
+    letter-spacing: 10px;
+    background: linear-gradient(135deg,#121212 25%,#1a1a1a 25%,#1a1a1a 50%,#121212 50%,#121212 75%,#1a1a1a 75%,#1a1a1a);
+    background-size: 40px 40px;
+    animation: moveimagen 2s linear infinite;
 }
 
-.navbarimg {
-    margin-left: -12px;
-    width: 50px;
+@keyframes moveimagen {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+
+main > article {
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    animation: presentation0to1 2s 1;
+}
+
+@keyframes presentation0to1 {
+    0% {
+        scale: 0;
+    }
+
+    75% {
+        scale: 1.2;
+    }
+    100% {
+        scale: 1;
+    }
+
+}
+
+main > article:hover {
+    scale: 1.1;
+}
+
+main > article > h1 {
+    text-shadow: white 1px 1px 1px;
+    transition: all 0s;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+    background-clip: text;
+    transition: all 0.3s;
+}
+
+main > article > h1:hover {
+    color: transparent;
+    text-shadow: transparent 0px 0px 0px;
+    transition: all 0.3s;
+}
+
+main > article > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid transparent;
+    animation: borderparrafo 1s 1 1.65s alternate forwards;
+}
+
+@keyframes borderparrafo {
+    100% {
+        border: 2px solid white;
+    }
+}
+
+main > nav {
+    right: 0;
+    top: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 25px;
     margin-right: 25px;
 }
 
-.href-navbar {
+.svgheading {
+    width: 30px;
+    fill: rgb(215, 82, 255);
+}
+
+main > nav > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1.25rem;
+  padding: 20px;
+  color: var(--text-color-light);
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  word-spacing: 2px;
+  translate: 75px;
+  letter-spacing: 2px;
+  margin-right: 20px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+main > nav > a:hover span {
+  opacity: 1;
+  translate: 0;
+}
+
+#sticky-bar {
     display: flex;
-    position: relative;
+    justify-content: space-around;
     align-items: center;
-    margin: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: snow;
-    text-shadow: black 1px 1px 3px;
-    border-bottom: 1px solid transparent;
-    border-radius: 20px;
-    transition: 0.2s;
+    position: sticky;
+    top: 0;
+    padding: 7px;
+    background-color: rgba(255, 250, 250, 0.658);
 }
 
-.href-navbar b {
-    text-align: center;
-    position: absolute;
-    left: 50px;
-    background-color: rgba(220, 20, 60, 0.75);
-    width: 100px;
-    padding: 5px;
-    border-radius: 5px;
-    opacity: 0;
-    transition: all 0.2s;
-}
-
-.href-navbar:hover b {
-    opacity: 1;
-}
-
-.href-navbar:hover {
-    border-bottom: 1px solid white;
-    border-radius: 0px;
-}
-
-#presentation {
+#sticky-bar > a {
+    padding: 4px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-top: 45px;
-    background: linear-gradient(164deg, rgba(0,0,0,1) 19%, rgba(170,5,38,1) 71%);
-    box-shadow: snow 1px 1px 5px 2px;
-}
-
-#desc-presentation {
-    display: flex;
+    border-radius: 50%;
     flex-direction: column;
-    flex-wrap: wrap;
-    text-shadow: rgb(0, 0, 0) 1.5px 1.5px 1.5px;
-    padding: 10px;
-    font-size: 2rem;
-    margin-left: 0px;
-    cursor: default;
+    transition: 0.3s;
 }
 
-#desc-presentation>h2 {
-    display: flex;
-    text-align: center;
-    flex-wrap: wrap;
-    word-wrap: break-word;
-    margin-bottom: 10px;
+#sticky-bar > a:hover{
+    background-color: rgb(0, 0, 0);
+    box-shadow: black 0px 0px 3px 1px;
+    scale: 1.1;
 }
 
-#img-presentation {
-    display: flex;
-    padding: 20px;
+#sticky-bar > a > svg {
+    width: 30px;
+    stroke: rgb(0, 0, 0);
+    transition: 0.3s;
 }
 
-#principal-profile {
-    display: flex;
-    width: 350px;
-    border-radius: 5px;
-    box-shadow: black 1px 1px 1.5px 2px, white -1px -1px 1.5px 2px;
+#sticky-bar > a > svg:hover {
+    scale: 1.1;
+    stroke: white;
 }
 
 #description-section {
-    width: 100%;
+    display: flex;
+    margin-left: 15px;
+    margin-top: 20px;
+    padding-bottom: 90px;
+    justify-content: space-around;
     cursor: default;
+    height: 100vh;
 }
 
-.titles-aboutskills {
+#description-section > article {
+    left: 0;
+    width: 50%;
     display: flex;
-    margin-top: 3%;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     text-align: center;
-    margin-right: 40%;
-    padding: 15px;
-    margin-left: 40%;
-    margin-bottom: 3%;
-    border-bottom: 4px solid crimson;
-    border-radius: 2px;
 }
 
-#description-section>p {
-    margin-left: 20%;
-    margin-right: 20%;
+#description-section >article > h2 {
+    font-size: 3.25rem;
+    margin-bottom: 15px;
+    text-shadow: white 2.5px 2.5px 0px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #fc00ff;
+    transition: 0.3s
+}
+
+#description-section >article > h2:hover {
+    border-bottom: 3px solid #00dbde;
+}
+
+#description-section >article > p {
+    font-size: 1.75rem;
     text-align: justify;
-    font-size: 1.35rem;
+    word-spacing: 3px;
+    margin: 0 66px;
 }
 
-#list-of-my-skills {
+#description-section > aside {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-.imgskills {
-    display: flex;
-}
-
-
-#list-of-my-skills>li {
-    text-align: center;
-    font-size: .75rem;
-    margin-right: 5px;
-}
-
-#list-of-my-skills>li>img {
-    width: 40px;
-    margin-bottom: 10px;
-}
-
-#theseare-myworks-h3 {
-    display: flex;
+    width: 50%;
     justify-content: center;
-    text-align: center;
-    font-size: 2.5rem;
-    padding: 15px;
-    border-radius: 2px;
-    text-shadow: white 1px 1px 2px;
+    align-items: center;
+    flex-direction: column;
+}
+
+#description-section > aside > picture {
+    width: 450px;
+    margin-bottom: 20px;
+}
+
+#description-section > aside > picture > img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#description-section > aside > ul {
+    display: flex;
+    padding: 30px;
+    justify-content: space-around;
+    gap: 50px;
+    background: snow;
+    border-radius: 10px;
+    box-shadow: #ffffff -3px -3px 6px 1px, #ffffff 3px 3px 6px 1px;
+}
+
+#description-section > aside > ul > li {
+    display: flex;
+}
+
+.svgskills {
+    width: 35px;
+    fill: rgb(0, 0, 0);
 }
 
 #myworks-section {
     display: flex;
-    align-items:center ;
     flex-direction: column;
-    gap: 30px;
-    margin-top: 2rem;
-    justify-content: space-around;
     width: 100%;
-    background: linear-gradient(164deg, rgba(0,0,0,1) 19%, rgba(170,5,38,1) 71%);
-    border-top: 4px solid crimson;
-    border-bottom: 4px solid rgb(0, 0, 0);
+    height: 100vh;
+}
+
+#myworks-section > h2 {
+    display: flex;
+    margin-top: -5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.25rem;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 #myprojects {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 30px;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-}
-
-.works-vercel {
-    object-fit: cover;
-    border: 2px solid black;
-    box-shadow: black 0px 0px 7px 1px;
-    border-radius: 10px;
-}
-
-.href-gotopage {
-    transition: 0.1s;
-}
-
-.href-gotopage:hover {
-    opacity: 70%;
-}
-
-#section-contact-media {
+    margin-top: -20px;
     width: 100%;
-}
-
-.titles-contactmedia {
-    display: flex;
-    margin-top: 3%;
-    justify-content: center;
-    text-align: center;
-    padding: 15px;
-}
-
-#ul-socialmedialist {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 3%;
-    border-bottom: 2px solid;
-
-}
-
-.href-socialmedia {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    text-align: center;
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    color: snow;
-    padding: 10px;
-    transition: 0.2s;
-}
-
-.href-socialmedia:hover {
-    background-color: rgba(0, 0, 0, 0.315);
-    border-radius: 10px;
-}
-
-.imgsocialmedialist {
-    display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-    width: 50px;
+    gap: 5px;
+}
+    
+#myprojects > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#form-email {
+#myprojects > a > picture {
+    width: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myprojects > a > picture > img {
+    align-self: center;
+    width: 100%;
+    padding: 5px;
+}
+
+.gotogithub-project {
+    padding: 5px;
+    position: absolute;
+    stroke: black;
+    width: 40px;
+    translate: -1000%;
+    transform: translateY(-240px);
+    border-radius: 50%;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.gotogithub-project:hover {
+    scale: 1.03;
+    box-shadow: white 0px 0px 7px;
+}
+
+.gotopage-project {
+    padding: 5px;
+    position: absolute;
+    stroke: black;
+    width: 40px;
+    translate: -650%;
+    transform: translateY(-240px);
+    border-radius: 50%;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.gotopage-project:hover {
+    scale: 1.03;
+    box-shadow: white 0px 0px 7px;
+}
+
+#contactme {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    border: 1px solid transparent;
     width: 100%;
+    height: 100vh;
 }
 
-#input-email-contact {
-    font-family: "Outfit";
-    color: snow;
+#contactme > h2 {
+    display: flex;
+    margin-top: -80px;
+    margin-bottom: 30px;
+    font-size: 3.25rem;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.281);
+    text-transform: uppercase;
+}
+
+#contactme > input {
+    background-color: transparent;
     border: none;
-    border-bottom: 2px solid crimson;
-    margin-bottom: 15px;
-    width: 50%;
-    height: 50px;
-}
-
-#input-email-contact::placeholder {
-    font-family: "Outfit";
+    background-color: rgba(80, 80, 80, 0.342) ;
+    border-bottom: 3px solid #fc00ff;
+    width: 60%;
+    padding: 30px 10px;
+    font-size: 1.5rem;
     color: snow;
     text-align: center;
+    font-family: "Outfit";
+    margin-bottom: 50px;
 }
 
-#textarea {
-    font-family: "Outfit";
+#contactme > input:focus {
+    outline: 0;
+}
+
+#contactme > input::placeholder {
     color: snow;
+}
+
+#contactme > textarea {
+    background-color: transparent;
     text-align: center;
     border: none;
-    border-bottom: 2px solid crimson;
-    background-color: rgba(0, 0, 0, 0.281);
+    background-color: rgba(80, 80, 80, 0.342) ;
+    border-bottom: 3px solid #00dbde;
+    width: 60%;
+    padding: 20px 10px;
+    color: snow;
+    font-size: 1.5rem;
+    font-family: "Outfit";
     resize: none;
-    min-width: 50%;
-    min-height: 350px;
-    max-width: 50%;
-    max-height: 350px;
-    padding: 15px;
-    margin-bottom: 15px;
+    height: 400px;
 }
 
-#textarea::placeholder {
-    font-family: "Outfit";
+#contactme > textarea::placeholder {
     color: snow;
-    text-align: center;
+}
+
+#contactme > textarea:focus {
+    outline: 0;
+}
+
+fieldset {
+    border: none;
 }
 
 #buttons-style {
-    border: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
 }
 
-.button-form {
+#buttons-style > button {
+    margin-right: 25px;
+    margin-left: 25px;
+    padding: 15px 30px;
     font-family: "Outfit";
+    background-color: transparent;
     color: snow;
+    border: 2px solid rgba(255, 255, 255, 0.288);
+    border-radius: 4px;
+    font-size: 1.25rem;
     cursor: pointer;
-    border: 2px solid rgb(255, 255, 255);    
-    background-color: rgba(0, 0, 0, 0.281);
-    width: 100px;
-    margin-right: 5px;
-    padding: 10px 20px;
-    margin-bottom: 15px;
-    transition: 0.1s;
+    transition: all 0.3s;
 }
 
-.button-form:hover {
-    transition: 0.2s;
-    border: 2px solid crimson;
-}
-
-.button-form:active {
-    transition: 0.05s;
-    background-color: snow;
-    color: black;
-    border: 2px solid snow;
+#buttons-style > button:hover {
+    border: 2px solid rgb(255, 255, 255)
 }
