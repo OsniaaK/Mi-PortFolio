@@ -32,7 +32,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: calc(5vh + 2rem);
     scroll-snap-align: start;
 }
 
